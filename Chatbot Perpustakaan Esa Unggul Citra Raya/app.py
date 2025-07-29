@@ -14,12 +14,13 @@ app.static_folder = "static"
 # Fungsi untuk membuat koneksi ke database Railway
 def get_db_connection():
     return mysql.connector.connect(
-        host=os.environ["mysql.railway.internal"],         # ⬅️ wajib, tanpa fallback
-        user=os.environ["root"],
-        password=os.environ["GpgnInNNkHkvTTyUQKPNJGZiKBwvPAQd"],
-        database=os.environ["railway"],
-        port=int(os.environ.get("3306", 3306))  # port boleh pakai get
+        host=os.environ["MYSQLHOST"],       # ✅ nama variabel dari Railway
+        user=os.environ["MYSQLUSER"],
+        password=os.environ["MYSQLPASSWORD"],
+        database=os.environ["MYSQLDATABASE"],
+        port=int(os.environ["MYSQLPORT"])
     )
+
 
 
 # Load intents dari database
