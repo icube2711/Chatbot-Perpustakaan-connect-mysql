@@ -1,0 +1,7 @@
+flask
+gunicorn
+fuzzywuzzy
+python-Levenshtein
+mysql-connector-python
+gtts
+python-dotenv
