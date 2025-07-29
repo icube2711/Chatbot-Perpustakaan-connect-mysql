@@ -14,11 +14,11 @@ app.static_folder = "static"
 # Fungsi untuk membuat koneksi ke database Railway
 def get_db_connection():
     return mysql.connector.connect(
-        host=os.environ["MYSQLHOST"],         # ⬅️ wajib, tanpa fallback
+        host=os.environ["MYSQLHOST"],           # ← Hapus fallback 'localhost'
         user=os.environ["MYSQLUSER"],
         password=os.environ["MYSQLPASSWORD"],
         database=os.environ["MYSQLDATABASE"],
-        port=int(os.environ.get("MYSQLPORT", 3306))  # port boleh pakai get
+        port=int(os.environ["MYSQLPORT"])       # ← Juga tanpa fallback
     )
 
 
